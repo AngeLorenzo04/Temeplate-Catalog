@@ -55,18 +55,7 @@ export const templates: Template[] = [
     thumbnail: "/placeholder.svg?height=400&width=600",
     thumbnailColor: "bg-rose-500",
     demoUrl: "https://example.vercel.app",
-  },
-  {
-    slug: "sborra-landing-page",
-    name: "SBORRA Landing Page",
-    description:
-      "A SBORRA landing page with feature comparisons, a highlighted recommended plan, and FAQs. Ideal for subscription products and SaaS businesses.",
-    category: "SBORRA",
-    tags: ["sborra", "landing", "page"],
-    thumbnail: "/placeholder.svg?height=400&width=600",
-    thumbnailColor: "bg-purple-500",
-    demoUrl: "https://example.vercel.app",
-  },
+  }
 ]
 
 export function getTemplate(slug: string): Template | undefined {
