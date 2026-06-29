@@ -61,27 +61,27 @@ export default function RootLayout({
         >
           {/* Subtle Ambient Glow */}
           <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px]" />
-            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-secondary/5 blur-[120px]" />
+            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-sky-400/20 dark:bg-sky-500/20 blur-[120px]" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-amber-400/15 dark:bg-amber-500/15 blur-[120px]" />
           </div>
 
           <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/60 backdrop-blur-xl transition-all">
             <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
               <Link href="/" className="flex items-center gap-3 group">
-                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-100 text-sky-600 dark:bg-sky-900 dark:text-sky-300 group-hover:bg-amber-400 group-hover:text-amber-950 transition-colors">
                   <LayoutGrid className="size-4" aria-hidden="true" />
                 </div>
-                <span className="font-bold tracking-tight text-lg">La Bottega del Web</span>
+                <span className="font-bold tracking-tight text-lg group-hover:text-amber-500 transition-colors">La Bottega del Web</span>
               </Link>
               <nav className="flex items-center gap-6 text-sm font-medium text-muted-foreground">
-                <Link href="/" className="transition-colors hover:text-primary">
+                <Link href="/" className="transition-colors hover:text-amber-500">
                   Catalogo
                 </Link>
                 <a
                   href="https://vercel.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="transition-colors hover:text-primary"
+                  className="transition-colors hover:text-amber-500"
                 >
                   Documentazione
                 </a>
@@ -91,7 +91,7 @@ export default function RootLayout({
               </nav>
             </div>
             {/* Elegant Gradient Accent Line */}
-            <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary to-transparent opacity-30" />
+            <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-50" />
           </header>
           
           <div className="flex-1 w-full flex flex-col relative z-10 overflow-hidden">

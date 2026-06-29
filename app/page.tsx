@@ -9,13 +9,13 @@ export default function Page() {
       {/* Premium Hero Section */}
       <div className="relative mb-20 flex flex-col items-center text-center space-y-6">
         <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm text-primary backdrop-blur-sm">
-          <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+          <span className="flex h-2 w-2 rounded-full bg-amber-400 mr-2 animate-pulse shadow-[0_0_8px_rgba(251,191,36,0.8)]"></span>
           Catalogo Aggiornato 2026
         </div>
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-balance">
           L'eleganza del web <br className="hidden md:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-600 to-secondary">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-amber-400 to-primary">
             senza compromessi.
           </span>
         </h1>
