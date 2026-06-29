@@ -7,7 +7,7 @@ export function TemplateCard({ template }: { template: Template }) {
   return (
     <Link
       href={`/templates/${template.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-background/50 backdrop-blur-md shadow-sm transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/10 hover:-translate-y-1 hover:border-amber-500/30"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-background/50 backdrop-blur-md shadow-sm transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10 dark:hover:shadow-amber-500/10 hover:-translate-y-1 hover:border-sky-500/30 dark:hover:border-amber-500/30"
     >
       <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-gradient-to-br from-sky-50 via-amber-50/50 to-blue-100 dark:from-slate-900 dark:via-amber-900/10 dark:to-blue-950">
         <Image
@@ -22,14 +22,14 @@ export function TemplateCard({ template }: { template: Template }) {
       <div className="flex flex-1 flex-col gap-4 p-6">
         <div className="flex items-start justify-between gap-2">
           <div className="space-y-1">
-            <h3 className="font-semibold text-xl tracking-tight text-foreground group-hover:text-amber-500 transition-colors flex items-center gap-2">
+            <h3 className="font-semibold text-xl tracking-tight text-foreground group-hover:text-sky-500 dark:group-hover:text-amber-400 transition-colors flex items-center gap-2">
               {template.name}
             </h3>
-            <span className="inline-flex rounded-full bg-amber-100 dark:bg-amber-900/40 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+            <span className="inline-flex rounded-full bg-sky-100 dark:bg-amber-900/40 px-2.5 py-0.5 text-xs font-semibold text-sky-700 dark:text-amber-400 border border-sky-200 dark:border-amber-800">
               {template.category}
             </span>
           </div>
-          <div className="p-2 rounded-full bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-400 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+          <div className="p-2 rounded-full bg-sky-100 text-sky-600 dark:bg-amber-900/50 dark:text-amber-400 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
              <ArrowUpRight className="size-4" />
           </div>
         </div>
