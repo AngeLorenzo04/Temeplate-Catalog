@@ -94,18 +94,29 @@ export default function RootLayout({
             <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary to-transparent opacity-30" />
           </header>
           
-          <div className="flex-1 w-full flex flex-col">
+          <div className="flex-1 w-full flex flex-col relative z-10 overflow-hidden">
             {children}
+            
+            {/* Elegant Maiolica Lions (More Visible) */}
+            <div className="absolute bottom-0 left-0 -z-10 opacity-30 dark:opacity-25 pointer-events-none transition-opacity">
+              <img src="/lion.png" alt="" className="w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto scale-x-[-1]" />
+            </div>
+            <div className="absolute bottom-0 right-0 -z-10 opacity-30 dark:opacity-25 pointer-events-none transition-opacity">
+              <img src="/lion.png" alt="" className="w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto" />
+            </div>
           </div>
 
-          <footer className="mt-auto border-t border-border/40 bg-card/30 backdrop-blur-sm">
-            <div className="mx-auto max-w-7xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <footer className="mt-auto border-t border-border/40 bg-card/30 backdrop-blur-sm relative">
+            {/* Subtle Maiolica Ribbon Border */}
+            <div className="absolute top-0 left-0 w-full h-1.5 opacity-90" style={{ backgroundImage: 'url("/maiolica.png")', backgroundSize: 'contain', backgroundRepeat: 'repeat-x', backgroundPosition: 'center' }}></div>
+            
+            <div className="mx-auto max-w-7xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 mt-1">
               <div className="flex items-center gap-2">
                 <span className="font-bold text-primary">La Bottega del Web</span>
                 <span className="text-muted-foreground text-sm">© 2026. Tutti i diritti riservati.</span>
               </div>
-              <div className="text-sm text-muted-foreground">
-                Design ispirato all'eleganza della Maiolica Laertina.
+              <div className="text-sm text-muted-foreground flex items-center gap-2">
+                <span>Design ispirato all'eleganza della Maiolica Laertina</span>
               </div>
             </div>
           </footer>
