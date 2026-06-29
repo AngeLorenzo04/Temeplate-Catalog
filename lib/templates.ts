@@ -14,14 +14,14 @@ export type Template = {
 export const templates: Template[] = [
   {
     slug: "landing-page",
-    name: "Landing Page",
+    name: "NetScore26",
     description:
-      "A bold, conversion-focused marketing page with a hero section, feature highlights, and a prominent call to action. Perfect for product launches and waitlists.",
-    category: "Marketing",
+      "Sito web pensato per le divertirsi con gli amici, divertiti a fare predizioni sui risultati delle partite di calcio e a sfidare i tuoi amici!",
+    category: "Personale",
     tags: ["hero", "cta", "marketing", "responsive"],
     thumbnail: "/plate_blue.png",
     thumbnailColor: "bg-blue-500",
-    demoUrl: "https://example.vercel.app",
+    demoUrl: "https://netscore26.cloud/",
   },
   {
     slug: "admin-dashboard",
