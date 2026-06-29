@@ -25,7 +25,7 @@ export function TemplateCatalog({
   return (
     <div className="flex flex-col gap-6">
       {/* Filter bar */}
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Filter templates by category">
+      <div className="flex overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap gap-2 hide-scrollbar snap-x" role="group" aria-label="Filter templates by category">
         {filters.map((category) => {
           const isActive = category === activeCategory
           return (
@@ -34,7 +34,7 @@ export function TemplateCatalog({
               type="button"
               onClick={() => setActiveCategory(category)}
               aria-pressed={isActive}
-              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+              className={`snap-start whitespace-nowrap rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
                 isActive
                   ? "border-primary bg-primary text-primary-foreground"
                   : "border-border bg-background text-muted-foreground hover:text-foreground"

@@ -5,9 +5,9 @@ export default function Page() {
   const categories = getCategories()
 
   return (
-    <main className="mx-auto w-full max-w-7xl px-6 py-12 md:py-24">
+    <main className="mx-auto w-full max-w-7xl px-4 md:px-6 py-10 md:py-24">
       {/* Premium Hero Section */}
-      <div className="relative mb-20 flex flex-col items-center text-center space-y-6">
+      <div className="relative mb-14 md:mb-20 flex flex-col items-center text-center space-y-6">
         <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm text-primary backdrop-blur-sm">
           <span className="flex h-2 w-2 rounded-full bg-amber-400 mr-2 animate-pulse shadow-[0_0_8px_rgba(251,191,36,0.8)]"></span>
           Catalogo Aggiornato 2026
