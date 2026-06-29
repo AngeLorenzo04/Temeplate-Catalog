@@ -102,16 +102,13 @@ export default function RootLayout({
             <div className="absolute bottom-0 left-0 -z-10 opacity-30 dark:opacity-25 pointer-events-none transition-opacity hidden md:block">
               <img src="/lion.png" alt="" className="w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto scale-x-[-1]" />
             </div>
-            <div className="absolute bottom-0 right-0 -z-10 opacity-30 dark:opacity-25 pointer-events-none transition-opacity">
-              <img src="/lion.png" alt="" className="w-48 sm:w-80 md:w-96 lg:w-[500px] h-auto" />
+            <div className="absolute bottom-0 left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 md:right-0 -z-10 opacity-30 dark:opacity-25 pointer-events-none transition-opacity flex justify-center w-full md:w-auto overflow-visible">
+              <img src="/lion.png" alt="" className="w-96 sm:w-80 md:w-96 lg:w-[500px] h-auto max-w-none opacity-40 md:opacity-100" />
             </div>
           </div>
 
           <footer className="mt-auto border-t border-border/40 bg-card/30 backdrop-blur-sm relative">
-            {/* Subtle Maiolica Ribbon Border */}
-            <div className="absolute top-0 left-0 w-full h-1.5 opacity-90" style={{ backgroundImage: 'url("/maiolica.png")', backgroundSize: 'contain', backgroundRepeat: 'repeat-x', backgroundPosition: 'center' }}></div>
-            
-            <div className="mx-auto max-w-7xl px-4 md:px-6 py-6 md:py-8 flex flex-col items-center md:flex-row md:justify-between gap-3 md:gap-4 mt-1 text-center md:text-left">
+            <div className="mx-auto max-w-7xl px-4 md:px-6 py-6 md:py-8 flex flex-col items-center md:flex-row md:justify-between gap-3 md:gap-4 text-center md:text-left">
               <div className="flex flex-col md:flex-row items-center gap-1 md:gap-2">
                 <span className="font-bold text-primary">La Bottega del Web</span>
                 <span className="text-muted-foreground text-xs md:text-sm">© 2026. Tutti i diritti riservati.</span>
