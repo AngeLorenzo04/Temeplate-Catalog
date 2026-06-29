@@ -17,7 +17,7 @@ export function TemplateCard({ template }: { template: Template }) {
         />
       </div>
 
-      <div className="flex flex-1 flex-col gap-3 p-4 pb-6">
+      <div className="flex flex-1 flex-col gap-3 p-4 pb-8">
         <div className="flex items-center justify-between gap-2">
           <h3 className="font-semibold text-card-foreground">{template.name}</h3>
           <span className="shrink-0 rounded-full border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">
@@ -37,7 +37,7 @@ export function TemplateCard({ template }: { template: Template }) {
       </div>
       
       {/* Bottom Maiolica Border for Card */}
-      <div className="absolute bottom-0 left-0 w-full h-1.5" style={{ backgroundImage: 'url("/maiolica.png")', backgroundSize: 'contain', backgroundRepeat: 'repeat-x', backgroundPosition: 'center' }}></div>
+      <div className="absolute bottom-0 left-0 w-full h-3" style={{ backgroundImage: 'url("/maiolica.png")', backgroundSize: 'contain', backgroundRepeat: 'repeat-x', backgroundPosition: 'center' }}></div>
     </Link>
   )
 }
