@@ -1,6 +1,7 @@
 import Link from "next/link"
+import Image from "next/image"
 import { notFound } from "next/navigation"
-import { ArrowLeft, Code2, Eye } from "lucide-react"
+import { ArrowLeft, Eye } from "lucide-react"
 import { getTemplate, templates } from "@/lib/templates"
 
 export function generateStaticParams() {
@@ -25,11 +26,14 @@ export default async function TemplateDetailPage({ params }: { params: Promise<{
         Back to catalog
       </Link>
 
-      <div
-        className={`mb-8 flex aspect-[2/1] items-center justify-center rounded-xl ${template.thumbnailColor}`}
-        aria-hidden="true"
-      >
-        <span className="text-2xl font-semibold text-white/90">{template.name}</span>
+      <div className="relative mb-8 flex aspect-[2/1] w-full items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-sky-50 via-amber-50/50 to-blue-100 dark:from-slate-900 dark:via-amber-900/10 dark:to-blue-950 border border-border/50 shadow-md">
+        <Image
+          src={template.thumbnail}
+          alt={template.name}
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-sky-900/40 via-transparent to-transparent opacity-80" />
       </div>
 
       <div className="flex flex-col gap-4">
@@ -53,20 +57,11 @@ export default async function TemplateDetailPage({ params }: { params: Promise<{
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href={`/templates/${template.slug}/preview`}
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 shadow-sm"
           >
             <Eye className="size-4" aria-hidden="true" />
             Live Preview
           </Link>
-          <button
-            type="button"
-            disabled
-            aria-disabled="true"
-            className="inline-flex cursor-not-allowed items-center gap-2 rounded-lg border border-border bg-background px-5 py-2.5 text-sm font-medium text-muted-foreground opacity-60"
-          >
-            <Code2 className="size-4" aria-hidden="true" />
-            View Code
-          </button>
         </div>
       </div>
     </main>
