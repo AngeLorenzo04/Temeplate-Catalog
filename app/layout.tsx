@@ -52,55 +52,61 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
-      <body className="font-sans antialiased flex flex-col min-h-screen">
+      <body className="font-sans antialiased flex flex-col min-h-screen bg-slate-50 dark:bg-slate-950 text-foreground selection:bg-primary/20">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <header className="border-b border-border bg-background relative">
-            <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-              <Link href="/" className="flex items-center gap-2 font-semibold">
-                <LayoutGrid className="size-5 text-primary" aria-hidden="true" />
-                <span>Template Catalog</span>
+          {/* Subtle Ambient Glow */}
+          <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px]" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-secondary/5 blur-[120px]" />
+          </div>
+
+          <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/60 backdrop-blur-xl transition-all">
+            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+              <Link href="/" className="flex items-center gap-3 group">
+                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <LayoutGrid className="size-4" aria-hidden="true" />
+                </div>
+                <span className="font-bold tracking-tight text-lg">La Bottega del Web</span>
               </Link>
-              <nav className="flex items-center gap-4 text-sm text-muted-foreground">
-                <Link href="/" className="transition-colors hover:text-foreground">
-                  Browse
+              <nav className="flex items-center gap-6 text-sm font-medium text-muted-foreground">
+                <Link href="/" className="transition-colors hover:text-primary">
+                  Catalogo
                 </Link>
                 <a
                   href="https://vercel.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="transition-colors hover:text-foreground"
+                  className="transition-colors hover:text-primary"
                 >
-                  Docs
+                  Documentazione
                 </a>
-                <ThemeToggle />
+                <div className="pl-4 border-l border-border/50">
+                  <ThemeToggle />
+                </div>
               </nav>
             </div>
-            {/* Header Maiolica Border */}
-            <div className="h-4 sm:h-6 w-full" style={{ backgroundImage: 'url("/maiolica.png")', backgroundSize: 'contain', backgroundRepeat: 'repeat-x', backgroundPosition: 'center' }}></div>
+            {/* Elegant Gradient Accent Line */}
+            <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary to-transparent opacity-30" />
           </header>
           
-          <div className="flex-1 relative z-10 w-full overflow-hidden">
+          <div className="flex-1 w-full flex flex-col">
             {children}
-            {/* Decorative Lions */}
-            <div className="absolute bottom-0 left-0 -z-10 opacity-50 pointer-events-none">
-              <img src="/lion.png" alt="" className="w-64 sm:w-80 md:w-96 lg:w-[450px] h-auto scale-x-[-1]" />
-            </div>
-            <div className="absolute bottom-0 right-0 -z-10 opacity-50 pointer-events-none">
-              <img src="/lion.png" alt="" className="w-64 sm:w-80 md:w-96 lg:w-[450px] h-auto" />
-            </div>
           </div>
 
-          <footer className="mt-auto relative z-10">
-            {/* Maiolica Border Ribbon */}
-            <div className="h-4 sm:h-6 w-full" style={{ backgroundImage: 'url("/maiolica.png")', backgroundSize: 'contain', backgroundRepeat: 'repeat-x', backgroundPosition: 'center' }}></div>
-            {/* Footer Content */}
-            <div className="bg-[#0f3b7d] py-6 text-center text-white/90 text-sm font-medium tracking-wide">
-              Copyright &copy; 2026 Template La Bottega del Web
+          <footer className="mt-auto border-t border-border/40 bg-card/30 backdrop-blur-sm">
+            <div className="mx-auto max-w-7xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-primary">La Bottega del Web</span>
+                <span className="text-muted-foreground text-sm">© 2026. Tutti i diritti riservati.</span>
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Design ispirato all'eleganza della Maiolica Laertina.
+              </div>
             </div>
           </footer>
         </ThemeProvider>
