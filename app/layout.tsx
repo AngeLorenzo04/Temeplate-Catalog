@@ -2,7 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Link from 'next/link'
-import { LayoutGrid } from 'lucide-react'
+import Image from 'next/image'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ThemeToggle } from '@/components/theme-toggle'
 import './globals.css'
@@ -68,8 +68,14 @@ export default function RootLayout({
           <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/60 backdrop-blur-xl transition-all">
             <div className="mx-auto flex h-14 md:h-16 max-w-7xl items-center justify-between px-4 md:px-6">
               <Link href="/" className="flex items-center gap-2 md:gap-3 group">
-                <div className="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-lg bg-sky-100 text-sky-600 dark:bg-sky-900 dark:text-sky-300 group-hover:bg-amber-400 group-hover:text-amber-950 transition-colors">
-                  <LayoutGrid className="size-3.5 md:size-4" aria-hidden="true" />
+                <div className="relative w-8 h-8 md:w-9 md:h-9 rounded-lg overflow-hidden border border-border/40 bg-white dark:bg-slate-900 flex items-center justify-center p-0.5 transition-all group-hover:border-amber-400 shadow-sm">
+                  <Image
+                    src="/logo_minimal.png"
+                    alt="La Bottega del Web Logo"
+                    width={36}
+                    height={36}
+                    className="object-contain w-full h-full rounded-md"
+                  />
                 </div>
                 <span className="font-bold tracking-tight text-base md:text-lg group-hover:text-amber-500 transition-colors hidden sm:block">La Bottega del Web</span>
                 <span className="font-bold tracking-tight text-base sm:hidden group-hover:text-amber-500 transition-colors">LBDW</span>
@@ -109,9 +115,20 @@ export default function RootLayout({
 
           <footer className="mt-auto border-t border-border/40 bg-card/30 backdrop-blur-sm relative">
             <div className="mx-auto max-w-7xl px-4 md:px-6 py-6 md:py-8 flex flex-col items-center md:flex-row md:justify-between gap-3 md:gap-4 text-center md:text-left">
-              <div className="flex flex-col md:flex-row items-center gap-1 md:gap-2">
-                <span className="font-bold text-primary">La Bottega del Web</span>
-                <span className="text-muted-foreground text-xs md:text-sm">© 2026. Tutti i diritti riservati.</span>
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3">
+                <div className="relative w-6 h-6 rounded-md overflow-hidden border border-border/40 bg-white dark:bg-slate-900 flex items-center justify-center p-0.5 shadow-sm">
+                  <Image
+                    src="/logo_minimal.png"
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="object-contain w-full h-full rounded-[4px]"
+                  />
+                </div>
+                <div className="flex flex-col md:flex-row items-center gap-1 md:gap-2">
+                  <span className="font-bold text-primary">La Bottega del Web</span>
+                  <span className="text-muted-foreground text-xs md:text-sm">© 2026. Tutti i diritti riservati.</span>
+                </div>
               </div>
               <div className="text-xs md:text-sm text-muted-foreground flex items-center gap-2">
                 <span>Design ispirato all'eleganza della Maiolica Laertina</span>
